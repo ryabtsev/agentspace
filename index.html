@@ -4,32 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agent Space Directory</title>
+
     <style>
-        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #333; max-width: 1000px; margin: 0 auto; padding: 20px; background-color: #f9fafb; }
-        header { text-align: center; padding: 40px 0; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 40px; }
-        h1 { margin: 0 0 10px 0; color: #111827; }
-        h2 { color: #1f2937; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 40px; }
-        h3 { color: #374151; }
-        .subtitle { font-size: 1.2em; color: #6b7280; }
-        .section { background: white; padding: 24px; border-radius: 8px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; line-height: 1.6; color: #f8fafc; max-width: 1100px; margin: 0 auto; padding: 20px; background-color: #0f172a; }
+        header { text-align: center; padding: 50px 20px; background: linear-gradient(135deg, #1e293b, #0f172a); border-radius: 12px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); margin-bottom: 40px; border: 1px solid rgba(255, 255, 255, 0.1); position: relative; overflow: hidden; }
+        h1 { margin: 0 0 10px 0; color: #ffffff; font-size: 2.5em; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        h2 { color: #e2e8f0; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 8px; margin-top: 40px; font-weight: 300; }
+        h3 { color: #cbd5e1; }
+        .subtitle { font-size: 1.1em; color: #94a3b8; max-width: 800px; margin: 15px auto; }
+        .section { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); padding: 30px; border-radius: 12px; margin-bottom: 30px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-        .card { background: #f3f4f6; padding: 16px; border-radius: 6px; border-left: 4px solid #3b82f6; }
-        .card.highlight { border-left-color: #10b981; background: #ecfdf5; }
-        .code { background: #1f2937; color: #f3f4f6; padding: 16px; border-radius: 6px; font-family: monospace; overflow-x: auto; }
-        .tag { display: inline-block; padding: 4px 8px; background: #e5e7eb; border-radius: 4px; font-size: 0.85em; margin-right: 8px; font-weight: bold; }
-        .agnostic { text-align: center; margin: 30px 0; padding: 20px; background: #e0f2fe; border-radius: 8px; }
-        .live-tracks { border: 1px solid #d1d5db; border-radius: 8px; overflow: hidden; }
-        .track-item { padding: 12px 16px; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; background: white;}
-        .track-item:last-child { border-bottom: none; }
-        .track-item:before { content: "📄"; margin-right: 12px; }
-        .track-time { color: #6b7280; font-size: 0.85em; margin-left: auto; }
+        .card { background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: 8px; border-left: 4px solid #3b82f6; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); background: rgba(15, 23, 42, 0.8); }
+        .card.highlight { border-left-color: #10b981; background: rgba(16, 185, 129, 0.1); }
+        .card.highlight:hover { background: rgba(16, 185, 129, 0.15); }
+        .code { background: #000000; color: #3b82f6; padding: 16px; border-radius: 6px; font-family: monospace; overflow-x: auto; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .tag { display: inline-block; padding: 6px 12px; background: #334155; border-radius: 20px; font-size: 0.85em; margin-right: 8px; font-weight: bold; color: #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .agnostic { text-align: center; margin: 40px 0; padding: 30px; background: rgba(30, 41, 59, 0.7); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
+        .icon-img { position: absolute; top: 15px; right: 15px; opacity: 0.1; width: 50px; height: 50px; pointer-events: none; }
+        a { color: #60a5fa; text-decoration: none; }
+        a:hover { text-decoration: underline; }
     </style>
+
 </head>
 <body>
 
     <header>
+        <img src="assets/banner.svg" alt="Banner" style="max-width: 100%; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
         <h1>Agent Space Directory</h1>
-        <p class="subtitle">A single-page discovery and orchestration hub for file-based AI agents.</p>
+        <p class="subtitle" style="text-align: left;">Project: <strong>agentspace.directory</strong> is an open-source framework and discovery hub for LLM-agnostic, file-based AI agents. Built on the principle of Single-Source-of-Truth (SSoT), it allows developers to declare an agent's entire "soul"—its identity, logic, memory, and activity—within a single, portable directory of Markdown files.</p>
+        <p class="subtitle" style="text-align: left;">By treating the file system as the primary orchestration layer, agentspace.directory eliminates fragmented configurations and provides a transparent, version-controlled environment where agents can be developed, tested, and shared regardless of the underlying language model.</p>
         <div style="margin-top: 15px;">
             <span class="tag">Unified Directory Pattern</span>
             <span class="tag">Single-Source-of-Truth</span>
@@ -40,9 +44,9 @@
         <h3>🤖 Engine Agnostic Display</h3>
         <p>The entire agent behavior is declared in <strong>one single directory</strong>. It can be run seamlessly by different engines:</p>
         <div style="margin-top: 15px;">
-            <span class="tag" style="background: #fff;">GPT</span>
-            <span class="tag" style="background: #fff;">Claude</span>
-            <span class="tag" style="background: #fff;">Jules</span>
+            <span class="tag">GPT</span>
+            <span class="tag">Claude</span>
+            <span class="tag">Gemini</span>
         </div>
     </div>
 
@@ -51,18 +55,22 @@
         <p>The website facilitates a <strong>"Directory-First"</strong> approach to AI. All agent logic is declared in a single, LLM-agnostic folder structure.</p>
         <div class="grid">
             <div class="card">
+                <img src="assets/icon.svg" class="icon-img" alt="icon">
                 <h3><code>instructions.md</code></h3>
                 <p>The "DNA" of the agent—system roles and logic.</p>
             </div>
             <div class="card">
+                <img src="assets/icon.svg" class="icon-img" alt="icon">
                 <h3><code>memories.md</code></h3>
                 <p>Shared long-term context and personal facts.</p>
             </div>
             <div class="card">
+                <img src="assets/icon.svg" class="icon-img" alt="icon">
                 <h3><code>tools.md</code></h3>
                 <p>Unified API and capability definitions.</p>
             </div>
             <div class="card">
+                <img src="assets/icon.svg" class="icon-img" alt="icon">
                 <h3><code>tracks/</code></h3>
                 <p>A subfolder for active state tracking (e.g., <code>debug-xxx.md</code>, <code>feat-xxx.md</code>).</p>
             </div>
@@ -73,16 +81,18 @@
         <h2>2. Integrated Extensions</h2>
         <div class="grid">
             <div class="card">
-                <h3>Extension A: <code>apitests</code> (ryabtsev/apitests)</h3>
+                <img src="assets/icon.svg" class="icon-img" alt="icon">
+                <h3>Extension A: <code>apitests</code> (apitests)</h3>
                 <p><strong>Purpose:</strong> TDD for agents.</p>
                 <p><strong>Implementation:</strong> gentests are created within individual project repositories.</p>
-                <p><em>Jules Instruction:</em> When working on a task in a <code>tracks/</code> file, Jules must first check the project repo for gentests and run them to verify any logic changes.</p>
+                <p><em>Gemini Instruction:</em> When working on a task in a <code>tracks/</code> file, Gemini must first check the project repo for gentests and run them to verify any logic changes.</p>
             </div>
             <div class="card">
-                <h3>Extension B: <code>apistubs</code> (ryabtsev/apistubs)</h3>
+                <img src="assets/icon.svg" class="icon-img" alt="icon">
+                <h3>Extension B: <code>apistubs</code> (apistubs)</h3>
                 <p><strong>Purpose:</strong> Environment isolation and safety.</p>
                 <p><strong>Implementation:</strong> Used to mock unstable or expensive third-party APIs.</p>
-                <p><em>Jules Instruction:</em> If a task requires an external API that isn't available in the cloud VM, Jules should use apistubs to create a mock endpoint based on the schema in <code>tools.md</code>.</p>
+                <p><em>Gemini Instruction:</em> If a task requires an external API that isn't available in the cloud VM, Gemini should use apistubs to create a mock endpoint based on the schema in <code>tools.md</code>.</p>
             </div>
         </div>
     </div>
@@ -91,19 +101,22 @@
         <h2>3. Directory Examples (Use Cases)</h2>
         <div class="grid">
             <div class="card highlight">
+                <img src="assets/icon.svg" class="icon-img" alt="icon">
                 <h3>Example 1: Test & Dev Agent</h3>
                 <p><strong>Focus:</strong> Automated debugging and feature implementation.</p>
                 <p><strong>Workflow:</strong> Reads a bug report in <code>tracks/</code>, identifies the failing apitest in the repo, and fixes the code until the test passes.</p>
-                <p style="margin-top: 10px; padding: 10px; background: #d1fae5; border-radius: 4px; border-left: 3px solid #059669;">
-                    <strong>Highlight:</strong> This workflow heavily leverages the <strong>apitests</strong> extension (ryabtsev/apitests) to practice Test-Driven Development (TDD) for agents, ensuring robust logic changes through automated <em>gentests</em>!
+                <p style="margin-top: 10px; padding: 10px; background: rgba(16, 185, 129, 0.2); border-radius: 4px; border-left: 3px solid #10b981; color: #a7f3d0;">
+                    <strong>Highlight:</strong> This workflow heavily leverages the <strong>apitests</strong> extension (apitests) to practice Test-Driven Development (TDD) for agents, ensuring robust logic changes through automated <em>gentests</em>!
                 </p>
             </div>
             <div class="card">
+                <img src="assets/icon.svg" class="icon-img" alt="icon">
                 <h3>Example 2: Procurement Agent</h3>
                 <p><strong>Focus:</strong> Business process automation and governance.</p>
                 <p><strong>Workflow:</strong> Uses <code>instructions.md</code> to vet vendors against budget rules. Uses <code>apistubs</code> to simulate a payment gateway response before finalizing a purchase "track."</p>
             </div>
             <div class="card">
+                <img src="assets/icon.svg" class="icon-img" alt="icon">
                 <h3>Example 3: Second Brain & Personal Planner</h3>
                 <p><strong>Focus:</strong> Knowledge synthesis and schedule optimization.</p>
                 <p><strong>Workflow:</strong> Declares personal events (e.g., "Kate's Birthday March 19") in <code>memories.md</code>. The agent proactively creates a <code>tracks/</code> file to plan the event 14 days in advance.</p>
@@ -111,24 +124,6 @@
         </div>
     </div>
 
-    <div class="section">
-        <h2>4. Live Tracks Activity Feed</h2>
-        <p>Visually rendering the <code>.md</code> files in the <code>tracks/</code> folder as a live "Activity Feed."</p>
-        <div class="live-tracks">
-            <div class="track-item">
-                <span><code>feat-payment-gateway.md</code> - Procurement Agent vetting vendor</span>
-                <span class="track-time">2 mins ago</span>
-            </div>
-            <div class="track-item">
-                <span><code>debug-login-error.md</code> - Test & Dev Agent running <strong>apitests</strong></span>
-                <span class="track-time">15 mins ago</span>
-            </div>
-            <div class="track-item">
-                <span><code>plan-kates-birthday.md</code> - Second Brain synthesizing schedule</span>
-                <span class="track-time">1 hour ago</span>
-            </div>
-        </div>
-    </div>
 
 </body>
 </html>
