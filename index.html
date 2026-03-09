@@ -40,6 +40,34 @@
         </div>
     </header>
 
+    <div class="section">
+        <h2>3. Directory Examples (Use Cases)</h2>
+        <div class="grid">
+            <div class="card highlight">
+                <img src="assets/icon.svg" class="icon-img" alt="icon">
+                <h3>Example 1: Test & Dev Agent</h3>
+                <p><strong>Focus:</strong> Automated debugging and feature implementation.</p>
+                <p><strong>Workflow:</strong> Reads a bug report in <code>tracks/</code>, identifies the failing apitest in the repo, and fixes the code until the test passes.</p>
+                <p style="margin-top: 10px; padding: 10px; background: rgba(16, 185, 129, 0.2); border-radius: 4px; border-left: 3px solid #10b981; color: #a7f3d0;">
+                    <strong>Highlight:</strong> This workflow heavily leverages the <strong>apitests</strong> extension (apitests) to practice Test-Driven Development (TDD) for agents, ensuring robust logic changes through automated <em>gentests</em>!
+                </p>
+            </div>
+            <div class="card">
+                <img src="assets/icon.svg" class="icon-img" alt="icon">
+                <h3>Example 2: Procurement Agent</h3>
+                <p><strong>Focus:</strong> Business process automation and governance.</p>
+                <p><strong>Workflow:</strong> Uses <code>instructions.md</code> to vet vendors against budget rules. Uses <code>apistubs</code> to simulate a payment gateway response before finalizing a purchase "track."</p>
+            </div>
+            <div class="card">
+                <img src="assets/icon.svg" class="icon-img" alt="icon">
+                <h3>Example 3: Second Brain & Personal Planner</h3>
+                <p><strong>Focus:</strong> Knowledge synthesis and schedule optimization.</p>
+                <p><strong>Workflow:</strong> Declares personal events (e.g., "Kate's Birthday March 19") in <code>memories.md</code>. The agent proactively creates a <code>tracks/</code> file to plan the event 14 days in advance.</p>
+            </div>
+        </div>
+    </div>
+
+
     <div class="agnostic">
         <h3>🤖 Engine Agnostic Display</h3>
         <p>The entire agent behavior is declared in <strong>one single directory</strong>. It can be run seamlessly by different engines:</p>
@@ -97,32 +125,6 @@
         </div>
     </div>
 
-    <div class="section">
-        <h2>3. Directory Examples (Use Cases)</h2>
-        <div class="grid">
-            <div class="card highlight">
-                <img src="assets/icon.svg" class="icon-img" alt="icon">
-                <h3>Example 1: Test & Dev Agent</h3>
-                <p><strong>Focus:</strong> Automated debugging and feature implementation.</p>
-                <p><strong>Workflow:</strong> Reads a bug report in <code>tracks/</code>, identifies the failing apitest in the repo, and fixes the code until the test passes.</p>
-                <p style="margin-top: 10px; padding: 10px; background: rgba(16, 185, 129, 0.2); border-radius: 4px; border-left: 3px solid #10b981; color: #a7f3d0;">
-                    <strong>Highlight:</strong> This workflow heavily leverages the <strong>apitests</strong> extension (apitests) to practice Test-Driven Development (TDD) for agents, ensuring robust logic changes through automated <em>gentests</em>!
-                </p>
-            </div>
-            <div class="card">
-                <img src="assets/icon.svg" class="icon-img" alt="icon">
-                <h3>Example 2: Procurement Agent</h3>
-                <p><strong>Focus:</strong> Business process automation and governance.</p>
-                <p><strong>Workflow:</strong> Uses <code>instructions.md</code> to vet vendors against budget rules. Uses <code>apistubs</code> to simulate a payment gateway response before finalizing a purchase "track."</p>
-            </div>
-            <div class="card">
-                <img src="assets/icon.svg" class="icon-img" alt="icon">
-                <h3>Example 3: Second Brain & Personal Planner</h3>
-                <p><strong>Focus:</strong> Knowledge synthesis and schedule optimization.</p>
-                <p><strong>Workflow:</strong> Declares personal events (e.g., "Kate's Birthday March 19") in <code>memories.md</code>. The agent proactively creates a <code>tracks/</code> file to plan the event 14 days in advance.</p>
-            </div>
-        </div>
-    </div>
 
 
 </body>
