@@ -1,9 +1,9 @@
 Project: agentspace.directory
 Goal: A single-page discovery and orchestration hub for file-based AI agents.
-Architecture: Unified Directory Pattern (Single-Source-of-Truth).
+Architecture: Flexible Directory Pattern (Single-Source-of-Truth).
 
-1. Core Concept & Structure
-The website facilitates a "Directory-First" approach to AI. All agent logic is declared in a single, LLM-agnostic folder structure.
+1. Flexible Concept & Structure
+The website facilitates a "Flexible Structure" approach to AI. Directory structure and agent logic depend on the set of projects and application, kind of projects, and main goals.
 
 Key File Declarations:
 
