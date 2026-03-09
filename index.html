@@ -34,35 +34,36 @@
         <h1>🗂️ agentspace</h1>
         <p class="subtitle" style="text-align: left;">Project: <strong>agentspace.directory</strong> is an open-source framework and discovery hub for LLM-agnostic, file-based AI agents. Built on the principle of Single-Source-of-Truth (SSoT), it allows developers to declare an agent's entire "soul"—its identity, logic, memory, and activity—within a single, portable directory of Markdown files.</p>
         <p class="subtitle" style="text-align: left;">By treating the file system as the primary orchestration layer, agentspace.directory eliminates fragmented configurations and provides a transparent, version-controlled environment where agents can be developed, tested, and shared regardless of the underlying language model.</p>
-        <div style="margin-top: 15px;">
+        <p class="subtitle" style="text-align: left;"><strong>For Developers & Power Users:</strong> These agents are for everyone—from complex coding tasks to family budgeting and personal memory curation.</p>
+        <div style="margin-top: 15px; margin-bottom: 25px;">
             <span class="tag">Flexible Directory Pattern</span>
             <span class="tag">Single-Source-of-Truth</span>
         </div>
+        <a href="https://github.com/ryabtsev/agentspace" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #2ea043; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background-color 0.2s; display: inline-flex; align-items: center; gap: 8px;">
+            <svg height="20" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="20" fill="currentColor">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+            </svg>
+            View on GitHub
+        </a>
     </header>
 
     <div class="section">
-        <h2>3. Directory Examples (Use Cases)</h2>
+        <h2>Agent Space Hub</h2>
         <div class="grid">
             <div class="card highlight">
-                <img src="assets/icon.svg" class="icon-img" alt="icon">
-                <h3>Example 1: Test & Dev Agent</h3>
-                <p><strong>Focus:</strong> Automated debugging and feature implementation.</p>
-                <p><strong>Workflow:</strong> Reads a bug report in <code>tracks/</code>, identifies the failing apitest in the repo, and fixes the code until the test passes.</p>
-                <p style="margin-top: 10px; padding: 10px; background: rgba(16, 185, 129, 0.2); border-radius: 4px; border-left: 3px solid #10b981; color: #a7f3d0;">
-                    <strong>Highlight:</strong> This workflow heavily leverages the <strong>apitests</strong> extension (apitests) to practice Test-Driven Development (TDD) for agents, ensuring robust logic changes through automated <em>gentests</em>!
-                </p>
+                <svg class="icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.1; width: 50px; height: 50px; position: absolute; top: 15px; right: 15px;"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                <h3>Dev & Test (The Builder)</h3>
+                <p><strong>Focus:</strong> Self-healing loops using apitests to fix code autonomously.</p>
             </div>
             <div class="card">
-                <img src="assets/icon.svg" class="icon-img" alt="icon">
-                <h3>Example 2: Procurement Agent</h3>
-                <p><strong>Focus:</strong> Business process automation and governance.</p>
-                <p><strong>Workflow:</strong> Uses <code>instructions.md</code> to vet vendors against budget rules. Uses <code>apistubs</code> to simulate a payment gateway response before finalizing a purchase "track."</p>
+                <svg class="icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.1; width: 50px; height: 50px; position: absolute; top: 15px; right: 15px;"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                <h3>Procurement (The Buyer)</h3>
+                <p><strong>Focus:</strong> Business/Family governance; vetting vendors and simulating transactions via apistubs.</p>
             </div>
             <div class="card">
-                <img src="assets/icon.svg" class="icon-img" alt="icon">
-                <h3>Example 3: Second Brain & Personal Planner</h3>
-                <p><strong>Focus:</strong> Knowledge synthesis and schedule optimization.</p>
-                <p><strong>Workflow:</strong> Declares personal events (e.g., "Kate's Birthday March 19") in <code>memories.md</code>. The agent proactively creates a <code>tracks/</code> file to plan the event 14 days in advance.</p>
+                <svg class="icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.1; width: 50px; height: 50px; position: absolute; top: 15px; right: 15px;"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path><circle cx="12" cy="12" r="6"></circle></svg>
+                <h3>Second Brain (The Planner)</h3>
+                <p><strong>Focus:</strong> Proactive life management; scanning memories.md to trigger tracks for family events and travel (e.g., Malaga/Vilnius logistics).</p>
             </div>
         </div>
     </div>
@@ -79,26 +80,26 @@
     </div>
 
     <div class="section">
-        <h2>1. Flexible Concept & Structure</h2>
+        <h2>Flexible Concept & Structure</h2>
         <p>The website facilitates a <strong>"Flexible Structure"</strong> approach to AI. Directory structure and agent logic depend on the set of projects and application, kind of projects, and main goals.</p>
         <div class="grid">
             <div class="card">
-                <img src="assets/icon.svg" class="icon-img" alt="icon">
+                <svg class="icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.1; width: 50px; height: 50px; position: absolute; top: 15px; right: 15px;"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                 <h3><code>instructions.md</code></h3>
                 <p>The "DNA" of the agent—system roles and logic.</p>
             </div>
             <div class="card">
-                <img src="assets/icon.svg" class="icon-img" alt="icon">
+                <svg class="icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.1; width: 50px; height: 50px; position: absolute; top: 15px; right: 15px;"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                 <h3><code>memories.md</code></h3>
                 <p>Shared long-term context and personal facts.</p>
             </div>
             <div class="card">
-                <img src="assets/icon.svg" class="icon-img" alt="icon">
+                <svg class="icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.1; width: 50px; height: 50px; position: absolute; top: 15px; right: 15px;"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                 <h3><code>tools.md</code></h3>
                 <p>Unified API and capability definitions.</p>
             </div>
             <div class="card">
-                <img src="assets/icon.svg" class="icon-img" alt="icon">
+                <svg class="icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.1; width: 50px; height: 50px; position: absolute; top: 15px; right: 15px;"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                 <h3><code>tracks/</code></h3>
                 <p>A subfolder for active state tracking (e.g., <code>debug-xxx.md</code>, <code>feat-xxx.md</code>).</p>
             </div>
@@ -106,21 +107,17 @@
     </div>
 
     <div class="section">
-        <h2>2. Integrated Extensions</h2>
+        <h2>Integrated Extensions</h2>
         <div class="grid">
             <div class="card">
-                <img src="assets/icon.svg" class="icon-img" alt="icon">
-                <h3>Extension A: <code>apitests</code> (apitests)</h3>
-                <p><strong>Purpose:</strong> TDD for agents.</p>
-                <p><strong>Implementation:</strong> gentests are created within individual project repositories.</p>
-                <p><em>Gemini Instruction:</em> When working on a task in a <code>tracks/</code> file, Gemini must first check the project repo for gentests and run them to verify any logic changes.</p>
+                <svg class="icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.1; width: 50px; height: 50px; position: absolute; top: 15px; right: 15px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <h3><code>apitests</code></h3>
+                <p>TDD for agents.</p>
             </div>
             <div class="card">
-                <img src="assets/icon.svg" class="icon-img" alt="icon">
-                <h3>Extension B: <code>apistubs</code> (apistubs)</h3>
-                <p><strong>Purpose:</strong> Environment isolation and safety.</p>
-                <p><strong>Implementation:</strong> Used to mock unstable or expensive third-party APIs.</p>
-                <p><em>Gemini Instruction:</em> If a task requires an external API that isn't available in the cloud VM, Gemini should use apistubs to create a mock endpoint based on the schema in <code>tools.md</code>.</p>
+                <svg class="icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.1; width: 50px; height: 50px; position: absolute; top: 15px; right: 15px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <h3><code>apistubs</code></h3>
+                <p>Environment safety/mocking.</p>
             </div>
         </div>
     </div>
