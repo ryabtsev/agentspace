@@ -32,6 +32,13 @@ Implementation: Used to mock unstable or expensive third-party APIs.
 
 Jules Instruction: If a task requires an external API that isn't available in the cloud VM, Jules should use apistubs to create a mock endpoint based on the schema in tools.md.
 
+Extension C: apicron (ryabtsev/apicron)
+Purpose: Proactive scheduling and time-based triggers.
+
+Implementation: Scheduled tasks are run autonomously.
+
+Jules Instruction: Use apicron to perform repetitive tasks or trigger actions at specific times.
+
 3. Directory Examples (Use cases)
 Include these three examples as the primary content sections of the single-page site:
 
